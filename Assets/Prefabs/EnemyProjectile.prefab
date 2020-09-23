@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5991055782392465946, guid: 16706c92803a365499bbfa9e0d292e1d,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991055782392465946, guid: 16706c92803a365499bbfa9e0d292e1d,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5991055782392465947, guid: 16706c92803a365499bbfa9e0d292e1d,
         type: 3}
       propertyPath: m_IsTrigger

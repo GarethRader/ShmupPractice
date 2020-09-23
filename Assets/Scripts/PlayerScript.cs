@@ -66,8 +66,9 @@ public class PlayerScript : MonoBehaviour {
         transform.localPosition = new Vector3(xPos, transform.position.y, 0);
     }
 
-    private void OnTriggerenter2D(Collision2D other){
-        if(other.gameObject.tag =="enemyPrjectile"){
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.tag =="EnemyProjectile"){
+            Debug.Log("Player was hit");
             Destroy(other.gameObject);
             health -= 0.1f;
             healthBar.fillAmount = health;
