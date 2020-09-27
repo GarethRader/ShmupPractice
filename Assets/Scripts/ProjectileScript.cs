@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    public float               speed = 2f;
-    public float direction;
-    private Rigidbody2D        rb;
+    private float speed = 10f;
+    private Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,10 @@ public class ProjectileScript : MonoBehaviour
     private IEnumerator Launch() {
         //yield return new WaitForSeconds(1);
         //rb.AddForce(transform.right * -1);
-        rb.AddForce(transform.up * speed * direction);
+        var orientation = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z));
+        orientation = orientation - this.transform.position;
+        orientation.Normalize();
+        rb.AddForce(orientation * speed);
         yield return null;
     }
 
