@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519625895}
   - component: {fileID: 519625894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyManager
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -784,11 +784,11 @@ GameObject:
   - component: {fileID: 1474535116}
   - component: {fileID: 1474535115}
   - component: {fileID: 1474535118}
-  - component: {fileID: 1474535120}
   - component: {fileID: 1474535114}
   - component: {fileID: 1474535117}
   - component: {fileID: 1474535119}
-  m_Layer: 0
+  - component: {fileID: 1474535120}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1474535113}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6f24db7eb3268d0468f9f2823b193c56, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -925,18 +925,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee42f685d5ae9b547a521f3505b59d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1474535120
-MonoBehaviour:
+--- !u!50 &1474535120
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474535113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee42f685d5ae9b547a521f3505b59d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_BodyType: 1
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 6f24db7eb3268d0468f9f2823b193c56, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1663443600
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
-
+    
     private bool canMove;
     private Vector3 lastMoveDir;
     private float speed{
         get;
         set; 
     }
-     private float health{
+    private float health{
         get;
         set;
     }
@@ -24,7 +24,6 @@ public class PlayerScript : MonoBehaviour {
         health = 1f;
         speed = 10f;
         lastMoveDir.z = 0f;
-        canMove = true;
     }
 
     private void Update() {
@@ -35,7 +34,8 @@ public class PlayerScript : MonoBehaviour {
 
 
 
-    #region Movement
+    
+
     private void HandleMovement(){
         float moveX = 0f;
         float moveY = 0f;
@@ -53,25 +53,47 @@ public class PlayerScript : MonoBehaviour {
             moveX = 1f;
         }
         
+        Vector3 moveDir = new Vector3(moveX, moveY).normalized;
+
+        TryMove(moveDir, speed * Time.deltaTime); // can use to play different animations
+        //lastMoveDir.x = moveDir.x; // used for dashing
+        //lastMoveDir.y = moveDir.y;
+        //this.transform.position += moveDir * speed * Time.deltaTime;
+    }
+
+    private bool CanMove(Vector3 dir, float distance){
+        return Physics2D.Raycast(transform.position, dir, distance).collider == null;
+    }
+    
+    private bool TryMove(Vector3 baseMoveDir, float distance){
+        Vector3 moveDir = baseMoveDir;
+        bool canMove = CanMove(moveDir, speed * Time.deltaTime);
+        if(!canMove){
+            // can't move diagonally
+            moveDir = new Vector3(baseMoveDir.x, 0f).normalized;
+            canMove = moveDir.x != 0f && CanMove(moveDir, speed * Time.deltaTime);
+            if(!canMove){
+                // can't move horizontally
+                moveDir = new Vector3(0f, baseMoveDir.y).normalized;
+                canMove = moveDir.y != 0f && CanMove(moveDir, speed * Time.deltaTime);
+            }
+        }
         if(canMove){
-            Vector3 moveDir = new Vector3(moveX, moveY,0).normalized;
-            lastMoveDir.x = moveDir.x; // used for dashing
-            lastMoveDir.y = moveDir.y;
-            this.transform.position += moveDir * speed * Time.deltaTime;
+            lastMoveDir = moveDir;
+            transform.position += moveDir * distance;
+            return true;
         }
         else{
-
+            return false;
         }
-        
-        // TO DO:
-        // add ray casting to test for hitboxes (collision with walls and other objects?)
     }
-    #endregion
     private void HandleDash(){
         if(Input.GetKeyDown(KeyCode.Space)){
-            
+            float dashDistance = 2f; // might add as class variable
+            TryMove(lastMoveDir, dashDistance); // can also use to add dash animation
         }
     }
+
     private void HandleFire(){
         // this allows the player game object to rotate/aim according to mouse position
         // front of player sprite will always be facing towards the mouse cursor
@@ -85,6 +107,8 @@ public class PlayerScript : MonoBehaviour {
             Fire();
         }
     }
+
+    
     private void Fire(){
         Instantiate(projectile, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
     }
