@@ -5,30 +5,37 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 
-    private PlayerSkills playerSkills;
+    private bool canMove;
+    private Vector3 lastMoveDir;
     private float speed{
-        get {return speed;}
-        set{speed = value;} // May need to use protected set depending on implemenation of classes
+        get;
+        set; 
     }
-
-    private float health{
-        get {return health;}
-        set{health = value;} // May need to use protected set depending on implemenation of classes
+     private float health{
+        get;
+        set;
     }
-    public Image healthBar;
+    [SerializeField] private Image healthBar;
 
-    public GameObject projectile;
+    [SerializeField] private GameObject projectile;
 
-    // Start is called before the first frame update
+   
     private void Awake(){
-        playerSkills = new PlayerSkills();
+        health = 1f;
+        speed = 10f;
+        lastMoveDir.z = 0f;
+        canMove = true;
     }
 
-    // Update is called once per frame
     private void Update() {
         HandleMovement();
-        
+        HandleDash();
+        HandleFire();
     }
+
+
+
+    #region Movement
     private void HandleMovement(){
         float moveX = 0f;
         float moveY = 0f;
@@ -46,22 +53,38 @@ public class PlayerScript : MonoBehaviour {
             moveX = 1f;
         }
         
+        if(canMove){
+            Vector3 moveDir = new Vector3(moveX, moveY,0).normalized;
+            lastMoveDir.x = moveDir.x; // used for dashing
+            lastMoveDir.y = moveDir.y;
+            this.transform.position += moveDir * speed * Time.deltaTime;
+        }
+        else{
 
-        Vector3 moveDir = new Vector3(moveX, moveY).normalized;
-        this.transform.position += moveDir * speed * Time.deltaTime;
-
-        // this allows the player game object to rotate according to mouse position
+        }
+        
+        // TO DO:
+        // add ray casting to test for hitboxes (collision with walls and other objects?)
+    }
+    #endregion
+    private void HandleDash(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            
+        }
+    }
+    private void HandleFire(){
+        // this allows the player game object to rotate/aim according to mouse position
         // front of player sprite will always be facing towards the mouse cursor
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg -90;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        this.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed); 
+
+        this.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed);
 
         if(Input.GetMouseButtonDown(0)){
             Fire();
         }
     }
-
     private void Fire(){
         Instantiate(projectile, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
     }
@@ -76,12 +99,16 @@ public class PlayerScript : MonoBehaviour {
         
     }
 
-    private bool CanUseDash(){
-        return PlayerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Dash);
-    }
-    private bool CanUseDodge(){
-        return PlayerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Dodge);
-    }
+
+
+
+    // SKILLS
+    //private bool CanUseDash(){
+    //    return PlayerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Dash);
+    //}
+    //private bool CanUseDodge(){
+    //    return PlayerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Dodge);
+    //}
 
     
 

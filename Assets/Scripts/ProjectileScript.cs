@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    private float speed = 10f;
+    private float speed{
+        get;
+        set;
+    }
     private Rigidbody2D rb;
     
     void Start()
     {
+        speed = 10f;
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine("Launch");
     }
