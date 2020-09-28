@@ -38,10 +38,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCharacter_Base.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Target.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyManagerScript.cs" />
      <Compile Include="Assets\Scripts\Player\TechTree\TechTreeScript.cs" />
-     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerShootProjectiles.cs" />
+     <Compile Include="Assets\ExplosionScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyProjectile.cs" />
     <Reference Include="UnityEngine">
         <HintPath>Z:/Unity/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

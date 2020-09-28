@@ -60,7 +60,6 @@ public class PlayerScript : MonoBehaviour {
         //lastMoveDir.y = moveDir.y;
         //this.transform.position += moveDir * speed * Time.deltaTime;
     }
-
     private bool CanMove(Vector3 dir, float distance){
         return Physics2D.Raycast(transform.position, dir, distance).collider == null;
     }
@@ -109,22 +108,12 @@ public class PlayerScript : MonoBehaviour {
     }
 
     
+
     private void Fire(){
         Instantiate(projectile, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.tag =="EnemyProjectile"){
-            Debug.Log("Player was hit");
-            Destroy(other.gameObject);
-            health -= 0.1f;
-            healthBar.fillAmount = health;
-        }
-        
-    }
-
-
-
+    
 
     // SKILLS
     //private bool CanUseDash(){
@@ -134,7 +123,7 @@ public class PlayerScript : MonoBehaviour {
     //    return PlayerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Dodge);
     //}
 
-    
 
 }
+
 

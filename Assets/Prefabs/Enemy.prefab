@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1909963545385241433}
   - component: {fileID: 1909963545385241428}
   - component: {fileID: 1909963545385241430}
+  - component: {fileID: -4360033808354957434}
   - component: {fileID: 1321917233092398260}
-  - component: {fileID: -4903834093610390610}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -94,7 +94,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1909963545385241432}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6f24db7eb3268d0468f9f2823b193c56, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -111,6 +111,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &-4360033808354957434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909963545385241432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471c34c3e7a89304c9a125c387f438a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1321917233092398260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,26 +135,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30002a2181bda8942bb6bc5d33ac4115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyProjectile: {fileID: 9085592531146552915, guid: 81cd5442bb2df954c87d2d530c213a79,
+  enemyProjectile: {fileID: 5991055782392465950, guid: 16706c92803a365499bbfa9e0d292e1d,
     type: 3}
---- !u!50 &-4903834093610390610
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909963545385241432}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 6f24db7eb3268d0468f9f2823b193c56, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
