@@ -23,6 +23,10 @@ Basic rules for the Game:
 
 
 
+09.29.2020 - Dungeon Generation and Camera Movement
+    
+    NEXT: fine tuning Dungeon Generation and adding zoom to Camera then adding collision with dungeon walls and other actors
+
 09.26.20 - Initial movement and firing mechanics have been made
 
     NEXT: dashing, dodging, and other movement mechanics and fine tuning. Firing/combat mechanics will be developed at a later time.

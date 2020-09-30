@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
    
     private void Awake(){
         health = 1f;
-        speed = 10f;
+        speed = 5f;
         lastMoveDir.z = 0f;
     }
 
