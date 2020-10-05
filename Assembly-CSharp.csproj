@@ -37,19 +37,27 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Environment\Rooms\RoomTemplate.cs" />
+     <Compile Include="Assets\Scripts\Environment\Rooms\DestroyerScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
+     <Compile Include="Assets\Prefabs\Health\HealthSystem.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCharacter_Base.cs" />
      <Compile Include="Assets\Scripts\Enemy\Target.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerObjectScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyManagerScript.cs" />
      <Compile Include="Assets\Scripts\Player\TechTree\TechTreeScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyProjectile.cs" />
+     <Compile Include="Assets\Prefabs\Health\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShootProjectiles.cs" />
      <Compile Include="Assets\ExplosionScript.cs" />
+     <Compile Include="Assets\Scripts\BattleSystem.cs" />
+     <Compile Include="Assets\Scripts\Environment\Rooms\AddRoom.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySpawnerScript.cs" />
      <Compile Include="Assets\Scripts\Environment\Rooms\RoomSpawner.cs" />
      <Compile Include="Assets\Scripts\GameManager\GameHandler.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\GameManager\EventManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\Camera\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\Environment\Rooms\DestroyerScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAi.cs" />
     <Reference Include="UnityEngine">
         <HintPath>Z:/Unity/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

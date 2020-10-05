@@ -28,14 +28,20 @@ public class PlayerShootProjectiles : MonoBehaviour
         rb.AddForce(orientation * speed);
         yield return null;
     }
+
+    private void OnBecameInvisible(){
+        Destroy(this.gameObject);
+        //Debug.Log("Projectile Destroyed");
+    }
     
     private void OnTriggerEnter2D(Collider2D collider){
-        Debug.Log("Collided");
+        //Debug.Log("Collided");
         Target target = collider.GetComponent<Target>();
         if(target){
-            Debug.Log("Destroyed");
+            //Debug.Log("Destroyed");
             Instantiate(explosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            collider.GetComponent<EnemyScript>().DamageTaken(10);
         }
     }
 }

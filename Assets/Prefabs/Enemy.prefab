@@ -135,5 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30002a2181bda8942bb6bc5d33ac4115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyProjectile: {fileID: 5991055782392465950, guid: 16706c92803a365499bbfa9e0d292e1d,
+  pfHealthBar: {fileID: 7501085934699682266, guid: 9a3e16d545a23124da74f4b4886c22f6,
     type: 3}
+  enemyProjectile: {fileID: 5554901201279250563, guid: 831356b750dbd7b49be94608c82d589d,
+    type: 3}
+  player: {fileID: 8501962788568070468, guid: 05b4e80e7969ad048ab7b49e0671e339, type: 3}

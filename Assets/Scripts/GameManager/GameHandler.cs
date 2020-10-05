@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour
     // can add other transforms to set camera on another target via cameraFollow.SetGetCameraFollowPositionFunc(() => target.position);
 
     private void Start(){
+        
         cameraFollow.Setup(() => PlayerTransform.position);
         cameraFollow.SetGetCameraFollowPositionFunc( () => PlayerTransform.position);
     }

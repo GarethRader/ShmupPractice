@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
-{
+{   
     [SerializeField] private int openingDirection;
-
     private RoomTemplate templates;
     private int rand;
     private bool spawned;
@@ -16,9 +15,14 @@ public class RoomSpawner : MonoBehaviour
         if(!this.templates){
             Debug.Log("Templates not found");
         }
-        Invoke("Spawn", 1f);
+        Invoke("Spawn",2f);
     }
+    
+    
 
+    private void SelfDestruct(){
+        Destroy(this.gameObject);
+    }
     private void Spawn(){
 
         if(!spawned){
@@ -41,16 +45,21 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.GetLeftRoomAtIndex(rand), this.transform.position, templates.GetLeftRoomAtIndex(rand).transform.rotation);
             }
             spawned = true;
+            this.SelfDestruct();
         }
     }
     private void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("SpawnPoint")){
             if(other.GetComponent<RoomSpawner>().spawned == false && spawned == false){
                 //spawn walls blocking off any openings
+                Debug.Log("Closed Room spawned ");
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         } 
         spawned = true;
     }
+
+
+    
 } 

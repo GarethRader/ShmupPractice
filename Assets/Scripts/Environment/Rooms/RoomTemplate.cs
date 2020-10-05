@@ -13,6 +13,8 @@ public class RoomTemplate : MonoBehaviour
     public int numRightRooms{protected set; get;}
     public int numLeftRooms{protected set; get;}
 
+    //public List<GameObject> rooms;
+
     public GameObject closedRoom;
     //public List<GameObject> rooms;
 
