@@ -11,7 +11,7 @@ public class EnemySpawnerScript : MonoBehaviour
    float randX, randY;
 
    Vector2 whereToSpawn;
-   [SerializeField] private float spawnRate = 2f;
+   [SerializeField] private float spawnRate = 10f;
     float nextSpawn = 0f;
     private bool startSpawning = true;
 
@@ -19,8 +19,8 @@ public class EnemySpawnerScript : MonoBehaviour
     void Update()
     {
 
-        if(startSpawning==true && getCountEnemies()<=10){
-            Debug.Log("Num enemies: " + enemyCount);
+        if(startSpawning==true && getCountEnemies()<=0){
+            //Debug.Log("Num enemies: " + enemyCount);
             SpawnEnemy();
         }
         
@@ -48,7 +48,7 @@ public class EnemySpawnerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.tag == "Player"){
-            Debug.Log("Collision detected");
+            //Debug.Log("Collision detected");
             startSpawning = true;
         }
     }

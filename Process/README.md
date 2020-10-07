@@ -22,6 +22,12 @@ Basic rules for the Game:
             -lives, health, currency, actions (take from health?)
 
 
+10.5.2020 - Enemy Spawning and targeting
+
+    NEXT: still having problems with simulating physics with player object rigid body component and collision/movement
+        - Dungeon generation bugs
+        - fine tuning enemy spawning
+        - add Enemy pathfinding
 
 09.29.2020 - Dungeon Generation and Camera Movement
     

@@ -8,6 +8,8 @@ TagManager:
   - Rooms
   - Projectile
   - Enemy
+  - Room
+  - Wall
   layers:
   - Default
   - TransparentFX

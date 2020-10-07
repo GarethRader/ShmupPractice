@@ -14,7 +14,7 @@ public class PlayerShootProjectiles : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private GameObject explosion;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 10f;
     
     private void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -36,12 +36,16 @@ public class PlayerShootProjectiles : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collider){
         //Debug.Log("Collided");
+        if(collider.tag == "Wall"){
+            Instantiate(explosion, this.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
         Target target = collider.GetComponent<Target>();
         if(target){
             //Debug.Log("Destroyed");
             Instantiate(explosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            collider.GetComponent<EnemyScript>().DamageTaken(10);
+            collider.GetComponent<EnemyScript>().DamageTaken(34);
         }
     }
 }

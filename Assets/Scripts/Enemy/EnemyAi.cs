@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyAi : MonoBehaviour
 {
-    private Vector3 startingPosition;
+    private EnemyScript enemy;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemy = GetComponent<EnemyScript>();
     }
 
     // Update is called once per frame
@@ -16,8 +16,5 @@ public class EnemyAi : MonoBehaviour
     {
         
     }
-    private void FindTarget(){
-        float targetRange = 10f;
-            
-    }
+    
 }

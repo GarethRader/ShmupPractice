@@ -22,7 +22,6 @@ public class EnemyProjectile : MonoBehaviour
             orientation.Normalize();
             rb.AddForce(orientation * speed);
         }
-        
         yield return null;
     }
     private Vector3 FindTarget(){
@@ -41,6 +40,17 @@ public class EnemyProjectile : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collider){
         //Debug.Log("Collided");
+        if(collider.tag == "Wall"){
+            Instantiate(explosion, this.transform.position, Quaternion.identity); // might put two lines of code into function for readability
+            Destroy(this.gameObject);
+        }
+        // TODO: add enemy collision with enemy projectiles but make them instantiate in front of the enemy so they dont hit themselves
+        //if(collider.tag == "Enemy"){
+        //    Instantiate(explosion, this.transform.position, Quaternion.identity);
+        //    Destroy(this.gameObject);
+        //    var enemy = collider.GetComponent<EnemyScript>();
+        //    enemy.DamageTaken(10);
+        //}
         if(collider.tag == "Player"){
             //Debug.Log("Destroyed");
             Instantiate(explosion, this.transform.position, Quaternion.identity);

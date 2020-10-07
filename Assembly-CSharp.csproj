@@ -42,6 +42,8 @@
      <Compile Include="Assets\Prefabs\Health\HealthSystem.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCharacter_Base.cs" />
      <Compile Include="Assets\Scripts\Enemy\Target.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAi.cs" />
+     <Compile Include="Assets\Firepoint.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerObjectScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyManagerScript.cs" />
      <Compile Include="Assets\Scripts\Player\TechTree\TechTreeScript.cs" />
@@ -57,7 +59,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\GameManager\EventManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\Camera\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyAi.cs" />
+     <Compile Include="Assets\EnemySpriteScript.cs" />
     <Reference Include="UnityEngine">
         <HintPath>Z:/Unity/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
