@@ -1,6 +1,18 @@
 #Process
 
 
+Initial Entry with brainstorming:
+    - initial idea was a bit more broad and a little infeasible to do in a short amount of time (after realizing how much work each system would need)
+    - later goal was to just have a basic shoot'em up that felt good with controls and was randomly generated
+        - I wanted to model the feeling of Enter the Gungeon when playing (could shoot all directions and aim while dodging bullet hell)
+        - Though more complicated mechanics don't exist quite yet, I feel like the fundamental of the games are solid which I would prefer having first before trying to implement more complex systems (different types of damage or shooting mechanics)
+
+Lessons from playtesting:
+    - Even when fundamentals are somewhat in place, there is still something that can always be better
+    - Balancing player/enemy interaction can always be better (making it feel challenging but not overwhelming)
+    - 80-20 rule, most of the game can be implemented very quickly, but fine-tuning takes up most of the time...
+
+
 Incorporate Single player versus game
 Capture Objective: reclaim digestive tract from harmful organisms while using remains from conquered enemies to gain new tools?
     - somewhat also construction objective

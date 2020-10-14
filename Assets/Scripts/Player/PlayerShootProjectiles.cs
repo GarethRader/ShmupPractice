@@ -14,9 +14,12 @@ public class PlayerShootProjectiles : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private GameObject explosion;
-    [SerializeField] private float speed = 10f;
+    
+    [SerializeField] private float speed = 5f;
+    
     
     private void Start(){
+        
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine("Launch");
     }

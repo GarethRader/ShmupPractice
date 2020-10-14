@@ -19,7 +19,7 @@ public class EnemySpawnerScript : MonoBehaviour
     void Update()
     {
 
-        if(startSpawning==true && getCountEnemies()<=0){
+        if(startSpawning==true && getCountEnemies()<=10){
             //Debug.Log("Num enemies: " + enemyCount);
             SpawnEnemy();
         }

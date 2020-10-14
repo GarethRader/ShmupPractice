@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 6184882172774215437, guid: 3fda13fe478ccc04b91769a79626967b,
     type: 3}
+  fireSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   speed: 5
 --- !u!212 &5991055782392465951
 SpriteRenderer:

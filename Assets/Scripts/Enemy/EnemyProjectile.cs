@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer sp;
     [SerializeField] private GameObject explosion;
     [SerializeField] private float speed = 3f;
     private Vector2 orientation;
@@ -12,8 +13,10 @@ public class EnemyProjectile : MonoBehaviour
     private void Start(){
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
         StartCoroutine("Launch");
     }
+    
     
     private IEnumerator Launch(){
         Vector3 direction = FindTarget();
@@ -34,7 +37,7 @@ public class EnemyProjectile : MonoBehaviour
     }
 
     private void OnBecameInvisible(){
-        Destroy(this.gameObject);
+        Destroy(this);
         //Debug.Log("Projectile Destroyed");
     }
     

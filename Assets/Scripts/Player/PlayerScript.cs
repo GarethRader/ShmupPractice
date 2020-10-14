@@ -7,7 +7,13 @@ public class PlayerScript : MonoBehaviour {
     
     
     [SerializeField] private GameObject projectile;
+    [SerializeField] private AudioClip fireSound;
+    private AudioSource fireSoundSource;
 
+    private void Start(){
+        fireSoundSource = GetComponent<AudioSource>();
+        fireSoundSource.clip = fireSound;
+    }
     private void Update() {
         HandleFire();
     }
@@ -26,6 +32,7 @@ public class PlayerScript : MonoBehaviour {
         this.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed);
 
         if(Input.GetMouseButtonDown(0)){
+            fireSoundSource.Play();
             Fire();
         }
     }

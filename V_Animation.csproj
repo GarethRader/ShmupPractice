@@ -36,19 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\SaveSystem.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\CLZF2.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\BodyPart.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\UnitAnimType.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_Animation.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\UVType.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_UnitAnimation.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_Skeleton_Updater.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_Skeleton_Anim.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_Skeleton_Frame.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_UnitSkeleton.cs" />
-     <Compile Include="Assets\CodeMonkey\_\Stuff\V_Animation\UnitAnim.cs" />
-     <None Include="Assets\CodeMonkey\_\Stuff\V_Animation\V_Animation.asmdef" />
+     <Compile Include="Assets\_\Stuff\V_Animation\SaveSystem.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\CLZF2.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\BodyPart.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\UnitAnimType.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\V_Animation.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\UVType.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\V_UnitAnimation.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\V_Skeleton_Updater.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\V_Skeleton_Anim.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\V_Skeleton_Frame.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\V_UnitSkeleton.cs" />
+     <Compile Include="Assets\_\Stuff\V_Animation\UnitAnim.cs" />
+     <None Include="Assets\_\Stuff\V_Animation\V_Animation.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>Z:/Unity/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

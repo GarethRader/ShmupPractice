@@ -14,18 +14,28 @@ public class PlayerObjectScript : MonoBehaviour
     private bool isDead = false;
     public float speed{ get; set; }
     private float health{ get; set;}
+    public static int enemyKillCount = 0;
+    
+    
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         healthSystem = new HealthSystem(100);
         
-
+       
         Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(this.transform.position.x, (float)(this.transform.position.y + 0.5)), Quaternion.identity, this.transform);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
 
         speed = 5f;
         lastMoveDir.z = 0f;
+    }
+
+    public void AddPoints(){
+        enemyKillCount++;
+    }
+    public int GetPoints(){
+        return enemyKillCount;
     }
 
     // Update is called once per frame
@@ -60,9 +70,7 @@ public class PlayerObjectScript : MonoBehaviour
         //lastMoveDir.y = moveDir.y;
         //this.transform.position += moveDir * speed * Time.deltaTime;
     }
-    //private bool CanMove(Vector3 dir, float distance){
-    //    return Physics2D.Raycast(transform.position, dir, distance).collider == null;
-    //}
+    
     
     
     private void HandleDash(){
@@ -75,13 +83,13 @@ public class PlayerObjectScript : MonoBehaviour
 
     public void DamageTaken(int amount){
         this.healthSystem.Damage(amount);
-        checkIsDead();
+        //if(checkIsDead())
     }
     private bool checkIsDead(){
         if(healthSystem.GetHealthPercentage() <= 0){
             isDead = true;
             Destroy(this.gameObject);
-            return true;
+            return true; // if true play dead/lose screen
         }
         return false;
     }
